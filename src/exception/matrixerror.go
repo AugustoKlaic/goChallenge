@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+//to do - cannot understand how to throw errors
+
 // CheckMatrixTypes - check if the matrix have all elements as int type
 func CheckMatrixTypes(records [][]string) error {
 	var typeAccepted string = "int"

@@ -2,6 +2,7 @@ package service
 
 import "testing"
 
+// to do - problem in creating a matrix in the test case
 func TestPrintMatrixAsString(t *testing.T) {
 
 }
