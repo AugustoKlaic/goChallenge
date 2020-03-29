@@ -1,6 +1,7 @@
 package service
 
 import (
+	"exception"
 	"fmt"
 	"strconv"
 	"strings"
@@ -8,6 +9,10 @@ import (
 
 // PrintMatrixAsString - Transform the matrix to string
 func PrintMatrixAsString(records [][]string) string {
+	if !exception.CheckMatrix(records) { // validate matrix
+		panic("Not valid Matrix")
+	}
+
 	var response string // variable that store matrix as string
 	for _, row := range records {
 		response = fmt.Sprintf("%s %s\n", response, strings.Join(row, ",")) // take response and add next line
@@ -37,6 +42,10 @@ func InvertMatrix(records [][]string) string {
 
 // FlattenMatrix - Write matrix as 1 line string
 func FlattenMatrix(records [][]string) string {
+	if !exception.CheckMatrix(records) { // validate matrix
+		panic("Not valid Matrix")
+	}
+
 	var response []string         // variable that store elements of matrix
 	for _, row := range records { // go through the first layer of records
 		for _, num := range row { // go through the second layer of records
@@ -48,6 +57,10 @@ func FlattenMatrix(records [][]string) string {
 
 // SumMatrix - return the sum of all elements in the matrix
 func SumMatrix(records [][]string) int {
+	if !exception.CheckMatrix(records) { // validate matrix
+		panic("Not valid Matrix")
+	}
+
 	var sum int = 0               // start with zero to prevent errors
 	for _, row := range records { // go through the first layer of records
 		for _, num := range row { // go through the second layer of records
@@ -60,6 +73,10 @@ func SumMatrix(records [][]string) int {
 
 // MultiplyMatrix - return the product of the multiplication
 func MultiplyMatrix(records [][]string) int {
+	if !exception.CheckMatrix(records) { // validate matrix
+		panic("Not valid Matrix")
+	}
+
 	var multiply int = 1          // start with 1 to not zero the multiplication
 	for _, row := range records { // go through the first layer of records
 		for _, num := range row { // go through the second layer of records
